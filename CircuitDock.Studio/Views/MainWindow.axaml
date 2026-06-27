@@ -1,55 +1,61 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         x:Class="CircuitDock.Studio.Views.MainWindow"
-        Title="CircuitDock Studio"
+        Title="CircuitDock Studio - Embedded Development Station"
         Width="1200"
         Height="750"
         MinWidth="900"
         MinHeight="600"
         Background="#0A0F1A">
 
-	<Grid RowDefinitions="64,*,32">
+	<Grid RowDefinitions="110,*,32">
 
 		<!-- Top Header -->
 		<Border Grid.Row="0"
-                Background="#101826"
-                BorderBrush="#1F2A3A"
-                BorderThickness="0,0,0,1">
-			<Grid ColumnDefinitions="240,*,220" Margin="20,0">
+				Background="#101826"
+				BorderBrush="#1F2A3A"
+				BorderThickness="0,0,0,1">
 
-				<StackPanel Orientation="Horizontal"
-                            VerticalAlignment="Center"
-                            Spacing="12">
-					<TextBlock Text="⚡"
-                               FontSize="26"
-                               Foreground="#0066FF"
-                               VerticalAlignment="Center"/>
-					<StackPanel>
-						<TextBlock Text="CircuitDock"
-                                   FontSize="22"
-                                   FontWeight="Bold"
-                                   Foreground="White"/>
-						<TextBlock Text="Studio"
-                                   FontSize="12"
-                                   Foreground="#8C95A5"/>
+			<Grid ColumnDefinitions="*,240"
+				  Margin="24,0">
+
+				<!-- CircuitDock Logo -->
+				<Image Grid.Column="0"
+					   Source="avares://CircuitDock.Studio/Assets/Images/logo_horizontal.png"
+					   Stretch="Uniform"
+					   HorizontalAlignment="Stretch"
+					   VerticalAlignment="Center"
+					   Margin="0,10,24,10"/>
+
+				<!-- Device Status -->
+				<Border Grid.Column="1"
+						Background="#172033"
+						BorderBrush="#2A3A55"
+						BorderThickness="1"
+						CornerRadius="8"
+						HorizontalAlignment="Right"
+						VerticalAlignment="Center"
+						Width="220"
+						Height="48">
+
+					<StackPanel Orientation="Horizontal"
+								Spacing="8">
+
+						<TextBlock Text="🔌"
+								   FontSize="16"
+								   VerticalAlignment="Center"/>
+
+						<TextBlock Text="No Device Connected"
+								   Foreground="#D6DCE8"
+								   FontSize="14"
+								   VerticalAlignment="Center"/>
+
 					</StackPanel>
-				</StackPanel>
 
-				<TextBlock Grid.Column="1"
-                           Text="Embedded Development Station"
-                           Foreground="#8C95A5"
-                           VerticalAlignment="Center"
-                           HorizontalAlignment="Center"
-                           FontSize="14"/>
+				</Border>
 
-				<Button Grid.Column="2"
-                        Content="No Device Connected"
-                        HorizontalAlignment="Right"
-                        VerticalAlignment="Center"
-                        Background="#172033"
-                        Foreground="#8C95A5"
-                        BorderBrush="#2A3A55"/>
 			</Grid>
+
 		</Border>
 
 		<!-- Main Content -->
