@@ -1,0 +1,193 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="CircuitDock.Studio.Views.MainWindow"
+        Title="CircuitDock Studio"
+        Width="1200"
+        Height="750"
+        MinWidth="900"
+        MinHeight="600"
+        Background="#0A0F1A">
+
+	<Grid RowDefinitions="64,*,32">
+
+		<!-- Top Header -->
+		<Border Grid.Row="0"
+                Background="#101826"
+                BorderBrush="#1F2A3A"
+                BorderThickness="0,0,0,1">
+			<Grid ColumnDefinitions="240,*,220" Margin="20,0">
+
+				<StackPanel Orientation="Horizontal"
+                            VerticalAlignment="Center"
+                            Spacing="12">
+					<TextBlock Text="⚡"
+                               FontSize="26"
+                               Foreground="#0066FF"
+                               VerticalAlignment="Center"/>
+					<StackPanel>
+						<TextBlock Text="CircuitDock"
+                                   FontSize="22"
+                                   FontWeight="Bold"
+                                   Foreground="White"/>
+						<TextBlock Text="Studio"
+                                   FontSize="12"
+                                   Foreground="#8C95A5"/>
+					</StackPanel>
+				</StackPanel>
+
+				<TextBlock Grid.Column="1"
+                           Text="Embedded Development Station"
+                           Foreground="#8C95A5"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"
+                           FontSize="14"/>
+
+				<Button Grid.Column="2"
+                        Content="No Device Connected"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Center"
+                        Background="#172033"
+                        Foreground="#8C95A5"
+                        BorderBrush="#2A3A55"/>
+			</Grid>
+		</Border>
+
+		<!-- Main Content -->
+		<Grid Grid.Row="1" ColumnDefinitions="220,*">
+
+			<!-- Sidebar -->
+			<Border Grid.Column="0"
+                    Background="#0F1724"
+                    BorderBrush="#1F2A3A"
+                    BorderThickness="0,0,1,0">
+				<StackPanel Margin="16" Spacing="8">
+
+					<TextBlock Text="WORKSPACE"
+                               Foreground="#5F6B7A"
+                               FontSize="11"
+                               FontWeight="Bold"
+                               Margin="0,8,0,8"/>
+
+					<Button Content="Dashboard" HorizontalContentAlignment="Left"/>
+					<Button Content="Devices" HorizontalContentAlignment="Left"/>
+					<Button Content="Serial Terminal" HorizontalContentAlignment="Left"/>
+					<Button Content="GPIO Control" HorizontalContentAlignment="Left"/>
+					<Button Content="ADC Monitor" HorizontalContentAlignment="Left"/>
+					<Button Content="PWM Generator" HorizontalContentAlignment="Left"/>
+					<Button Content="I²C Explorer" HorizontalContentAlignment="Left"/>
+					<Button Content="SPI Inspector" HorizontalContentAlignment="Left"/>
+					<Button Content="CAN Monitor" HorizontalContentAlignment="Left"/>
+
+					<TextBlock Text="SYSTEM"
+                               Foreground="#5F6B7A"
+                               FontSize="11"
+                               FontWeight="Bold"
+                               Margin="0,24,0,8"/>
+
+					<Button Content="Logs" HorizontalContentAlignment="Left"/>
+					<Button Content="Settings" HorizontalContentAlignment="Left"/>
+
+				</StackPanel>
+			</Border>
+
+			<!-- Dashboard -->
+			<Grid Grid.Column="1" Margin="28">
+				<StackPanel Spacing="22">
+
+					<TextBlock Text="Dashboard"
+                               FontSize="32"
+                               FontWeight="Bold"
+                               Foreground="White"/>
+
+					<TextBlock Text="Welcome to CircuitDock Studio."
+                               FontSize="16"
+                               Foreground="#8C95A5"/>
+
+					<Grid ColumnDefinitions="*,*,*" ColumnSpacing="16">
+
+						<Border Background="#101826"
+                                BorderBrush="#1F2A3A"
+                                BorderThickness="1"
+                                CornerRadius="10"
+                                Padding="20">
+							<StackPanel>
+								<TextBlock Text="Connected Devices"
+                                           Foreground="#8C95A5"
+                                           FontSize="13"/>
+								<TextBlock Text="0"
+                                           Foreground="White"
+                                           FontSize="36"
+                                           FontWeight="Bold"/>
+							</StackPanel>
+						</Border>
+
+						<Border Grid.Column="1"
+                                Background="#101826"
+                                BorderBrush="#1F2A3A"
+                                BorderThickness="1"
+                                CornerRadius="10"
+                                Padding="20">
+							<StackPanel>
+								<TextBlock Text="Active Tools"
+                                           Foreground="#8C95A5"
+                                           FontSize="13"/>
+								<TextBlock Text="0"
+                                           Foreground="White"
+                                           FontSize="36"
+                                           FontWeight="Bold"/>
+							</StackPanel>
+						</Border>
+
+						<Border Grid.Column="2"
+                                Background="#101826"
+                                BorderBrush="#1F2A3A"
+                                BorderThickness="1"
+                                CornerRadius="10"
+                                Padding="20">
+							<StackPanel>
+								<TextBlock Text="Status"
+                                           Foreground="#8C95A5"
+                                           FontSize="13"/>
+								<TextBlock Text="Ready"
+                                           Foreground="#0066FF"
+                                           FontSize="28"
+                                           FontWeight="Bold"/>
+							</StackPanel>
+						</Border>
+
+					</Grid>
+
+					<Border Background="#101826"
+                            BorderBrush="#1F2A3A"
+                            BorderThickness="1"
+                            CornerRadius="10"
+                            Padding="24">
+						<StackPanel Spacing="10">
+							<TextBlock Text="Getting Started"
+                                       FontSize="20"
+                                       FontWeight="Bold"
+                                       Foreground="White"/>
+							<TextBlock Text="Connect a CircuitDock device over USB to begin."
+                                       Foreground="#8C95A5"/>
+							<TextBlock Text="Upcoming modules: USB discovery, GPIO control, ADC monitoring, and serial communication."
+                                       Foreground="#8C95A5"/>
+						</StackPanel>
+					</Border>
+
+				</StackPanel>
+			</Grid>
+		</Grid>
+
+		<!-- Status Bar -->
+		<Border Grid.Row="2"
+                Background="#070B12"
+                BorderBrush="#1F2A3A"
+                BorderThickness="0,1,0,0">
+			<TextBlock Text="Status: No device connected"
+                       Foreground="#8C95A5"
+                       VerticalAlignment="Center"
+                       Margin="16,0"/>
+		</Border>
+
+	</Grid>
+</Window>
